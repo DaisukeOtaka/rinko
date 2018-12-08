@@ -8,7 +8,18 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
+phrases = [
+  "にゃー?"
+  "にゃ"
+  "にゃん"
+  "にゃー"
+  "にゃ！"
+]
+
 module.exports = (robot) ->
+  robot.hear /rinko/i, (msg) ->
+    msg.reply msg.random phrases
+
   robot.hear /乳酸菌/i, (res) ->
     res.send res.random ["ヤクルト","ピルクル","マミー","ジョア","ぐんぐんグルト","ヨーグルッペ","ビックル","Yoo"]
 
